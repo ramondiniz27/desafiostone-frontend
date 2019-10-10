@@ -2,4 +2,5 @@ Equipe partipante no Front End
 Ramon Marinho
 Rafael Lemos
 Renan Petrelli
+Jéssica Alves
 Vinícius Ribeiro
