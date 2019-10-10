@@ -323,44 +323,41 @@
   <h2>Produtos</h2>
   <p>Here are some links to help you get started:</p>
 
-  <div class="tabelaProdutos">
-    <table mat-table [dataSource]="produtos" class="mat-elevation-z8">
+  <div class="tabelaProdutos" *ngIf="produtos">
+    <table mat-table *ngFor=" let produto of produtos" class="mat-elevation-z8">
 
       <!--- Note that these columns can be defined in any order.
             The actual rendered columns are set as a property on the row definition" -->
     
       <!-- Position Column -->
       <ng-container matColumnDef="position">
-        <th mat-header-cell *matHeaderCellDef> Title</th>
+        <th mat-header-cell > Title</th>
         <td mat-cell *matCellDef="let produto"> {{produto.title}} </td>
       </ng-container>
     
       <!-- Name Column -->
       <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> Price </th>
+        <th mat-header-cell > Price </th>
         <td mat-cell *matCellDef="let produto"> {{produto.price}} </td>
       </ng-container>
     
       <!-- Weight Column -->
       <ng-container matColumnDef="weight">
-        <th mat-header-cell *matHeaderCellDef> zipcode </th>
+        <th mat-header-cell > zipcode </th>
         <td mat-cell *matCellDef="let produto"> {{produto.zipcode}} </td>
       </ng-container>
     
       <!-- Symbol Column -->
       <ng-container matColumnDef="symbol">
-        <th mat-header-cell *matHeaderCellDef> seller </th>
+        <th mat-header-cell > seller </th>
         <td mat-cell *matCellDef="let element"> {{produto.seller}} </td>
       </ng-container>
 
       <ng-container matColumnDef="symbol">
-        <th mat-header-cell *matHeaderCellDef> date </th>
+        <th mat-header-cell > date </th>
         <td mat-cell *matCellDef="let element"> {{produto.date}} </td>
       </ng-container>
-    
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
+  
       <button mat-raised-button (click)="RealizarCompra()">Comprar</button>
     </table>
 

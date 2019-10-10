@@ -10,12 +10,14 @@ import { Produto } from './produto.model';
 })
 export class AppComponent implements OnInit {
   title = 'FrontEnd';
-  produtos: Produto[];
+ public  produtos: Produto[];
   constructor(private servicoProdutos: ProdutoService){
 
   }
+
 ngOnInit()
 {
-this.produtos = this.servicoProdutos.listarCatalogoProduto();
+  this.produtos = this.servicoProdutos.listarCatalogoProduto();
+  console.log(this.produtos)
 }
 }
